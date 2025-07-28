@@ -1,10 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout";
+import Login from "./pages/Login";
+
 
 const App = () => {
   return (
-    <div>
-      <h1 className='text-red-600'>Hello</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={ <Layout />}>
+          <Route index element={ <Login />}></Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
