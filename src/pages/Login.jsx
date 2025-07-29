@@ -19,8 +19,8 @@ const Login = () => {
         </div>
       </form>
       <div className='flex flex-col justify-center'>
-        <button>Create new account</button>
-        <div className='flex justify-center items-center gap-2'>
+        <button className=''>Create new account</button>
+        <div className=' flex justify-center items-center gap-2'>
           <i className="fa-brands fa-meta"></i>
           <p>Meta</p>
         </div>
@@ -30,3 +30,6 @@ const Login = () => {
 }
 
 export default Login
+
+
+// font-roboto text-[23px] font-bold text-center tracking-[0.8px] leading-[32px]
