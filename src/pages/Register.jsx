@@ -1,26 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Input from "../components/Input";
 import Button from "../components/Button";
 
 const Register = () => {
+    const [formData, setFormData] = useState({
+        firstName : '',
+        lastName : '',
+        username : '',
+        password : '',
+        c_passwrod : '',
+    });
+    console.log(formData);
+    const handleChange = (e) => {
+        const {name, value} = e.target;
+
+        setFormData((prev) => ({
+            ...prev,
+            [name] : value,
+        }))
+    }
+
+
   return (
     <div className='flex flex-col justify-between w-screen h-screen p-4'>
-      <h1 className='text-center'>Englis US</h1>
-
       <div className='flex justify-center'>
         <i className="fa-brands fa-facebook-messenger text-blue-600 text-6xl"></i>
       </div>
 
-
-
       <form className='flex flex-col gap-4'>
         <div className='flex gap-2 w-full'>
-            <Input type='text' placeholder='First name' />
-            <Input type='text' placeholder='Last name'  />
+            <Input type='text' placeholder='First name' name='firstName' handleChange={handleChange} />
+            <Input type='text' placeholder='Last name' name='lastName'  handleChange={handleChange} />
         </div>
-        <Input type='email' placeholder='Mobile number or email' />
-        <Input type='password' placeholder='Password' />
-        <Input type='password' placeholder='Confirm Password' />
+        <Input type='email' placeholder='Mobile number or email' name='username'  handleChange={handleChange} />
+        <Input type='password' placeholder='Password' name='password' handleChange={handleChange} />
+        <Input type='password' placeholder='Confirm Password' name='c_passwrod' handleChange={handleChange} />
         <div>
           <Button text='Register' bgColor='blue' type='submit' />
         </div>
