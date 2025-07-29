@@ -1,23 +1,18 @@
-import React, { useState } from 'react'
+import React, { useReducer } from 'react'
 import Input from "../components/Input";
 import Button from "../components/Button";
+import { initialState, RegisterReducer   } from "../reducers/RegisterReducer";
 
 const Register = () => {
-    const [formData, setFormData] = useState({
-        firstName : '',
-        lastName : '',
-        username : '',
-        password : '',
-        c_passwrod : '',
-    });
-    console.log(formData);
-    const handleChange = (e) => {
-        const {name, value} = e.target;
+    const [state, dispatch] = useReducer(RegisterReducer, initialState);
 
-        setFormData((prev) => ({
-            ...prev,
-            [name] : value,
-        }))
+    const handleChange = (e) => {
+      const {name, value} = e.target;
+      dispatch({
+        type: 'updateField',
+        field: name,
+        value: value,
+      })
     }
 
 

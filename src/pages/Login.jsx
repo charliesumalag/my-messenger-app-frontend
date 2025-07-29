@@ -2,6 +2,7 @@ import React from 'react'
 import Input from "../components/Input";
 import Button from "../components/Button";
 
+
 const Login = () => {
   return (
     <div className='flex flex-col justify-between w-screen h-screen p-6'>
