@@ -2,7 +2,7 @@ import React from 'react'
 import Input from "../components/Input";
 import Button from "../components/Button";
 
-const Login = () => {
+const Register = () => {
   return (
     <div className='flex flex-col justify-between w-screen h-screen p-6'>
       <h1 className='text-center'>Englis US</h1>
@@ -15,12 +15,12 @@ const Login = () => {
         <Input type='email' placeholder='Mobile number or email' />
         <Input type='password' placeholder='Password' />
         <div>
-          <Button text='Log in' bgColor='blue' type='submit' />
+          <Button text='Register' bgColor='blue' type='submit' />
         </div>
       </form>
 
       <div className='flex flex-col justify-center'>
-        <button className=''>Create new account</button>
+        <button className=''>Log in account</button>
         <div className=' flex justify-center items-center gap-2'>
           <i className="fa-brands fa-meta"></i>
           <p>Meta</p>
@@ -30,7 +30,4 @@ const Login = () => {
   )
 }
 
-export default Login
-
-
-// font-roboto text-[23px] font-bold text-center tracking-[0.8px] leading-[32px]
+export default Register
